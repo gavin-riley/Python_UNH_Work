@@ -1,0 +1,32 @@
+# Python_UNH_Work
+import numpy as np
+import matplotlib.pyplot as plt
+D={}
+D_means={}
+D_std={}
+for i in range(10,201,10):
+    L=[]
+    for j in range(1,i+1):
+        a=np.random.random()
+        L.append(a)
+    mean=np.mean(L)
+    D_means[i]=mean
+    std=np.std(L)
+    D_std[i]=std
+    D[i]=L
+a=plt.figure(1)
+plt.hist(D[200],bins=5)
+plt.title('N=200')
+a.show()
+b=plt.figure(2)
+plt.hist(D[100],bins=5)
+plt.title('N=100')
+b.show()
+c=plt.figure(3)
+plt.hist(D[50],bins=5)
+plt.title('N=50')
+c.show()
+g=plt.figure(4)
+plt.hist(D[20],bins=5)
+plt.title('N=20')
+g.show()
